@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Follower
   attr_reader :login, :url
   def initialize(attributes = {})

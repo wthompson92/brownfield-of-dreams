@@ -1,19 +1,20 @@
-class UserDashboardFacade
+# frozen_string_literal: true
 
+class UserDashboardFacade
   def initialize(user)
     @user = user
   end
 
   def repos
-    @repos ||= repo_data[0..4].map {|data| Repo.new(data)}
+    @repos ||= repo_data[0..4].map { |data| Repo.new(data) }
   end
 
   def followers
-    @_followers ||= follower_data.map {|data| Follower.new(data)}
+    @_followers ||= follower_data.map { |data| Follower.new(data) }
   end
 
   def following
-    @_following ||= following_data.map {|data| Follower.new(data)}
+    @_following ||= following_data.map { |data| Follower.new(data) }
   end
 
   private
@@ -33,5 +34,4 @@ class UserDashboardFacade
   def follower_data
     @_follower_data ||= service.followers
   end
-
 end

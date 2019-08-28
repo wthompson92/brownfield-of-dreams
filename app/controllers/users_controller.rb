@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def show
-    render locals: {user: UserDashboardFacade.new(current_user)}
+    render locals: { user: UserDashboardFacade.new(current_user) }
   end
 
   def new
@@ -18,11 +20,9 @@ class UsersController < ApplicationController
     end
   end
 
-
   private
 
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :password, :github_token, :uid)
   end
-
 end

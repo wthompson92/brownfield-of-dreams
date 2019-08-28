@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_many :user_videos
   has_many :tokens
@@ -9,16 +11,14 @@ class User < ApplicationRecord
   validates_presence_of :password
   validates_presence_of :first_name
 
-  enum role: [:default, :admin]
+  enum role: %i[default admin]
   has_secure_password
 
   def connection?(name)
-     if self.tokens.where(nickname: name).first.nickname
-       true
-     else
-       false
-     end
+    if tokens.where(nickname: name).first.nickname
+      true
+    else
+      false
+    end
   end
-
-
 end

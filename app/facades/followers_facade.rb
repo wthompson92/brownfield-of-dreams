@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class FollowersFacade
   def followers
-    @_followers ||= follower_data.map {|data| Follower.new(data)}
+    @_followers ||= follower_data.map { |data| Follower.new(data) }
   end
 
   private
