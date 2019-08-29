@@ -26,9 +26,7 @@ class UsersController < ApplicationController
       user.validate_user
       user.save(validate: false)
       redirect_to confirm_email_path
-    else
-      flash[:error] = "Sorry. User does not exist"
-      redirect_to root_url
+    
     end
   end
 

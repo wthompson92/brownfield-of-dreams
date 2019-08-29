@@ -1,5 +1,6 @@
 <% unless current_user.email_confirmed%>
 <h3>Logged in as <%=current_user.email%></h3>
+
 <h3> This account has not yet been activated. Please check your email.</h3>
 <% else current_user.email_confirmed = true %>
 <section class="dashboard-main">

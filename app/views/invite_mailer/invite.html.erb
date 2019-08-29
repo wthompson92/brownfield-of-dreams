@@ -1,9 +1,9 @@
 <p>
 Hello <%= @handle %>,
 
-<%= @inviter.first_name + @nviter.last_name %> has invited you to join Brownfield. You can create an account here:
+<%= @inviter.first_name + @inviter.last_name %> has invited you to join Brownfield. You can create an account here:
 
-<%=  link_to "Register", new_user_url(host: "https://sheltered-mountain-20012.herokuapp.com")%>
+<%=  link_to "Register", new_user_url(host: "localhost:3000")%>
 
 
 </p>
